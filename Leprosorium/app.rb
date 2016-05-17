@@ -22,6 +22,14 @@ configure do
 		    	created_date DATETIME, 
 		    	content TEXT
 		    )'
+
+		    @db.execute 'CREATE TABLE IF NOT EXISTS Comments
+		   (
+		    	id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL, 
+		    	created_date DATETIME, 
+		    	content TEXT
+		    	post_id INTEGER
+		    )'
 end
 
 get '/' do
