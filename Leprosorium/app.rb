@@ -39,6 +39,7 @@ post '/new' do
   	@error='Type something in text field'
   	return erb :new
   end
+  # save data in database
 
 @db.execute 'insert into Posts (content, created_date) values (?, datetime())', [content]
 
