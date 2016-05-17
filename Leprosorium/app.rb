@@ -51,11 +51,15 @@ end
 
 #output info about post
 get '/details/:post_id' do
+
+	# get variable from URL
+
 	post_id = params[:post_id]
-
+	# get list of posts
 	@results = @db.execute 'select * from Posts where id = ?', [post_id]
+	#choosing this post in variable 'row'
 	@row = @results[0] 
-
+	# returns details.erb
 	erb :details
 end
 
